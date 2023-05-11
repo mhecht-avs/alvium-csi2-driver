@@ -71,7 +71,7 @@
 #include <linux/dma-mapping.h>
 
 #include "avt-csi2.h"
-#include <uapi/linux/libcsi_ioctl.h>
+#include "libcsi_ioctl.h"
 
 static int debug = 0;
 // module_param(debug, int, 0600);/* S_IRUGO */
