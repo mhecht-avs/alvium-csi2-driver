@@ -388,7 +388,7 @@ union bcrm_supported_lanecount_reg {
 struct avt_csi_information {
 	__u32 csi_clk_freq; //max_lane_frequency;
 	__u8 lane_count;
-	__u8 lane_assignment[V4L2_FWNODE_CSI2_MAX_DATA_LANES];
+	__u8 lane_assignment[V4L2_MBUS_CSI2_MAX_DATA_LANES];
 	__u8 clk_lane;
 };
 
