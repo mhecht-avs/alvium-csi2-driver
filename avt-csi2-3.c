@@ -7260,7 +7260,7 @@ err_exit:
 	return ret;
 }
 
-static int avt3_remove(struct i2c_client *client)
+static void avt3_remove(struct i2c_client *client)
 {
 	struct v4l2_subdev *sd = i2c_get_clientdata(client);
 	struct avt3_dev *sensor = to_avt3_dev(sd);
@@ -7292,7 +7292,7 @@ static int avt3_remove(struct i2c_client *client)
 
 	v4l2_async_unregister_subdev(&sensor->sd);
 
-	return 0;
+	return;
 }
 
 static const struct i2c_device_id avt3_id[] = {
