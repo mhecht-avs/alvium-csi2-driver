@@ -55,7 +55,7 @@
 #include <linux/slab.h>
 #include <linux/types.h>
 #include <linux/gpio/consumer.h>
-#include <media/mipi-csi2.h>
+//#include <media/mipi-csi2.h>
 #include <media/v4l2-async.h>
 #include <media/v4l2-ctrls.h>
 #include <media/v4l2-device.h>
@@ -70,6 +70,7 @@
 // only for dma_get_cache_alignment();
 #include <linux/dma-mapping.h>
 
+#include "mipi-csi2.h"
 #include "avt-csi2.h"
 #include "libcsi_ioctl.h"
 
