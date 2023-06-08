@@ -55,7 +55,6 @@
 #include <linux/slab.h>
 #include <linux/types.h>
 #include <linux/gpio/consumer.h>
-//#include <media/mipi-csi2.h>
 #include <media/v4l2-async.h>
 #include <media/v4l2-ctrls.h>
 #include <media/v4l2-device.h>
@@ -7261,7 +7260,7 @@ err_exit:
 	return ret;
 }
 
-static void avt3_remove(struct i2c_client *client)
+static int avt3_remove(struct i2c_client *client)
 {
 	struct v4l2_subdev *sd = i2c_get_clientdata(client);
 	struct avt3_dev *sensor = to_avt3_dev(sd);
@@ -7293,7 +7292,7 @@ static void avt3_remove(struct i2c_client *client)
 
 	v4l2_async_unregister_subdev(&sensor->sd);
 
-	return;
+	return 0;
 }
 
 static const struct i2c_device_id avt3_id[] = {
