@@ -7260,7 +7260,11 @@ err_exit:
 	return ret;
 }
 
+#if (LINUX_VERSION_CODE > KERNEL_VERSION(6, 0, 0))
+static void avt3_remove(struct i2c_client *client)
+#else
 static int avt3_remove(struct i2c_client *client)
+#endif
 {
 	struct v4l2_subdev *sd = i2c_get_clientdata(client);
 	struct avt3_dev *sensor = to_avt3_dev(sd);
@@ -7292,7 +7296,11 @@ static int avt3_remove(struct i2c_client *client)
 
 	v4l2_async_unregister_subdev(&sensor->sd);
 
+#if (LINUX_VERSION_CODE > KERNEL_VERSION(6, 0, 0))
+	return;
+#else
 	return 0;
+#endif
 }
 
 static const struct i2c_device_id avt3_id[] = {
